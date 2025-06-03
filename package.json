@@ -1,5 +1,5 @@
 {
-  "name": "custom-server-with-websocket",
+  "name": "nextpress-payload-socket",
   "version": "1.0.0",
   "description": "A blank template to get started with Payload 3.0",
   "license": "MIT",
