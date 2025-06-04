@@ -1,67 +1,94 @@
-# Payload Blank Template
+# nextpress-payload-socket
 
-This template comes configured with the bare minimum to get started on anything you need.
+A developer-focused starter project combining **Express**, **Next.js**, **PayloadCMS**, and **Socket.IO**. It’s designed for those who want:
 
-## Quick start
+- A headless CMS backend using PayloadCMS
+- Real-time capabilities via WebSockets (Socket.IO)
+- A clearly separated backend (Express) and frontend (Next.js)
+- A REST API backend for use across web and mobile apps
 
-This template can be deployed directly from our Cloud hosting and it will setup MongoDB and cloud S3 object storage for media.
+> ⚠️ This is an early-stage starter. Structure and features are evolving.
 
-## Quick Start - local setup
+---
 
-To spin up this template locally, follow these steps:
+## 🔧 Tech Stack
 
-### Clone
+- **Express** – backend server
+- **Next.js** – frontend rendering
+- **PayloadCMS** – headless CMS and authentication
+- **Socket.IO** – real-time communication
+- **pnpm** – for managing packages and running scripts
+- **nodemon** – for hot-reloading the server during development
 
-After you click the `Deploy` button above, you'll want to have standalone copy of this repo on your machine. If you've already cloned this repo, skip to [Development](#development).
+---
 
-### Development
+## 📦 Installation
 
-1. First [clone the repo](#clone) if you have not done so already
-2. `cd my-project && cp .env.example .env` to copy the example environment variables. You'll need to add the `MONGODB_URI` from your Cloud project to your `.env` if you want to use S3 storage and the MongoDB database that was created for you.
+Clone the repo and install dependencies:
 
-3. `pnpm install && pnpm dev` to install dependencies and start the dev server
-4. open `http://localhost:3000` to open the app in your browser
+```bash
+pnpm install
+```
 
-That's it! Changes made in `./src` will be reflected in your app. Follow the on-screen instructions to login and create your first admin user. Then check out [Production](#production) once you're ready to build and serve your app, and [Deployment](#deployment) when you're ready to go live.
+---
 
-#### Docker (Optional)
+## 🚀 Development
 
-If you prefer to use Docker for local development instead of a local MongoDB instance, the provided docker-compose.yml file can be used.
+Start the server with hot-reloading using:
 
-To do so, follow these steps:
+```bash
+pnpm dev
+```
 
-- Modify the `MONGODB_URI` in your `.env` file to `mongodb://127.0.0.1/<dbname>`
-- Modify the `docker-compose.yml` file's `MONGODB_URI` to match the above `<dbname>`
-- Run `docker-compose up` to start the database, optionally pass `-d` to run in the background.
+This runs `nodemon` to watch file changes and restart the Express server automatically.
 
-## How it works
+---
 
-The Payload config is tailored specifically to the needs of most websites. It is pre-configured in the following ways:
+## 🛠 Scripts
 
-### Collections
+| Command        | Description                       |
+| -------------- | --------------------------------- |
+| `pnpm dev`     | Start the dev server with nodemon |
+| `pnpm build`   | Build the Next.js app             |
+| `pnpm start`   | Start the production server       |
 
-See the [Collections](https://payloadcms.com/docs/configuration/collections) docs for details on how to extend this functionality.
+---
 
-- #### Users (Authentication)
+## 🧠 PayloadCMS Setup
 
-  Users are auth-enabled collections that have access to the admin panel.
+PayloadCMS is integrated and configured with the following collections:
 
-  For additional help, see the official [Auth Example](https://github.com/payloadcms/payload/tree/main/examples/auth) or the [Authentication](https://payloadcms.com/docs/authentication/overview#authentication-overview) docs.
+- **Media** – For managing file uploads
+- **User** – Basic user collection with auth
+- **Post** – Example content type
 
-- #### Media
+The Payload admin panel is available at:  
+```
+http://localhost:3000/admin
+```
 
-  This is the uploads enabled collection. It features pre-configured sizes, focal point and manual resizing to help you manage your pictures.
+Collections are defined in `payload.config.ts`.
 
-### Docker
+---
 
-Alternatively, you can use [Docker](https://www.docker.com) to spin up this template locally. To do so, follow these steps:
+## 📡 WebSocket Support
 
-1. Follow [steps 1 and 2 from above](#development), the docker-compose file will automatically use the `.env` file in your project root
-1. Next run `docker-compose up`
-1. Follow [steps 4 and 5 from above](#development) to login and create your first admin user
+Socket.IO is integrated for adding real-time functionality like:
 
-That's it! The Docker instance will help you get up and running quickly while also standardizing the development environment across your teams.
+- Live content updates
+- Notifications
+- Chat or collaboration tools
 
-## Questions
+Setup is in `socket.ts`.
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+---
+
+## 📁 Project Status
+
+This project is a starting point created for experimentation and future development. It’s currently in its early stages and the structure will evolve over time.
+
+---
+
+## 📄 License
+
+MIT
