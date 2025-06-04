@@ -49,7 +49,7 @@ This runs `nodemon` to watch file changes and restart the Express server automat
 | Command        | Description                       |
 | -------------- | --------------------------------- |
 | `pnpm dev`     | Start the dev server with nodemon |
-| `pnpm build`   | Build the Next.js app             |
+| `pnpm build`   | Build the Next.js and Express app |
 | `pnpm start`   | Start the production server       |
 
 ---
@@ -79,7 +79,7 @@ Socket.IO is integrated for adding real-time functionality like:
 - Notifications
 - Chat or collaboration tools
 
-Setup is in `socket.ts`.
+Setup is in `server.ts`.
 
 ---
 
